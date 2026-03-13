@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .formulario{
+            display: flex;
+  justify-content: center;    
+    }
+</style>
+<body>
+    <div class="formulario" >
+        <form name="Forms" action="?action=save">
+            <label>nome</label><br>
+            <input name="nome" type="text"><br>
+            <label>cpf</label><br>
+            <input name="cpf" type="text">
+            <input type="button" onclick="valida();" value="enviar">
+        </form>
+    </div>
+</body>
+<script>
+    function valida(){
+        
+         var campo_nome = document.forms["Forms"].nome.value.length;
+        if(campo_nome === 0){
+            alert("o nome é obrigatório");
+            return false;
+        }
+        
+        var tamanho_cpf = document.forms["Forms"].cpf.value.length;
+        if(tamanho_cpf === 0 || tamanho_cpf > 11){
+            alert("o campo cpf deve ter até 11 digitos e deve ser preenchido");
+            return false;
+        }
+
+       
+
+        return true;
+    }
+</script>
+</html>

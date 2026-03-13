@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    body{
+        background-color: aqua;
+        color: blueviolet;
+        font-style: italic;
+    }
+    form {
+        
+        margin: auto;
+        justify-content: center;
+        text-align: center;
+    }
+    table {
+        
+        margin: auto;
+        justify-content: center;
+        
+    }
+</style>
+<body>
+    <form name="Forms" onsubmit="return valida()">
+        <label>nome</label><br>
+        <input type="text" name="nome"><br>
+        <label>cpf</label><br>
+        <input type="text" name="cpf"><br>
+        <label for="sexo">sexo:</label><br>
+        <select id="sexo" name="sexo" size="3"><br>
+            <option value="masculino">masculino</option>
+            <option value="feminino">feminino</option>
+        </select><br><br>
+         <textarea name="message" rows="10" cols="30">observação</textarea>
+        <input type="submit" value="enviar">
+    </form><br><br>
+    <table border="10px" >
+        <tr>
+            <th>nome</th>
+            <th>idade</th>
+        </tr>
+        <tr>
+            <td>augusto</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>augusto</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>augusto</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>augusto</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>augusto</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>augusto</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>augusto</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>augusto</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>augusto</td>
+            <td>16</td>
+        </tr>
+
+    </table>
+</body>
+<script>
+     function valida(){
+        
+         var campo_nome = document.forms["Forms"].nome.value.length;
+        if(campo_nome === 0){
+            alert("o nome é obrigatório");
+            return false;
+        }
+        
+        var tamanho_cpf = document.forms["Forms"].cpf.value.length;
+        if(tamanho_cpf === 0 || tamanho_cpf > 11){
+            alert("o campo cpf deve ter até 11 digitos e deve ser preenchido");
+            return false;
+        }
+
+       
+
+        return true;
+    }
+</script>
+</html>
